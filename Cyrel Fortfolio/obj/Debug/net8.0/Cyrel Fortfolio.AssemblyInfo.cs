@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cyrel Fortfolio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3346ab878d5d3d87549bc6f32b0ebe25562d53dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dbbd22e8a47acf7200a3136ac1ba2f5e3579b44")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cyrel Fortfolio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cyrel Fortfolio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
