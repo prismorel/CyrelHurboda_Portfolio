@@ -593,7 +593,7 @@
             }
 
             function initTypingRole() {
-                const roles = ['☕ Coffee Lover', '🎮 Gamer', '🎹 Pianist', '🚀 Learning new technologies', '🛠️ Problem Solver', '🔥 Persistent','💡 Practical'];
+                const roles = ['☕ Coffee Lover', '🎮 Gamer', '🎹 Pianist / Oidoist', '🚀 Learning new technologies', '🛠️ Problem Solver', '🔥 Persistent','💡 Practical'];
                 const $target = $('#typing-role');
                 if (!$target.length) return;
 
