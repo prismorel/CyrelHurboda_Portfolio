@@ -1,147 +1,175 @@
-:root {
-    --endfield-accent: #facc15; /* Warning Yellow */
-    --endfield-dark: #0f1115;
-    --endfield-gray: #2a2d34;
-    --endfield-text: #e2e8f0;
-}
+        :root {
+            --endfield-accent: #facc15; /* Warning Yellow */
+            --endfield-dark: #0f1115;
+            --endfield-gray: #2a2d34;
+            --endfield-text: #e2e8f0;
+        }
 
-body {
-    background-color: var(--endfield-dark);
-    color: var(--endfield-text);
-    font-family: 'Rajdhani', sans-serif;
-    overflow-x: hidden;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
-}
+        body {
+            background-color: var(--endfield-dark);
+            color: var(--endfield-text);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
 
-.font-mono-tech {
-    font-family: 'Share Tech Mono', monospace;
-}
+        .font-mono-tech {
+            font-family: 'Share Tech Mono', monospace;
+        }
 
-/* Endfield signature angled corners */
-.clip-angled {
-    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
-}
+        .clip-angled {
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        }
 
-.clip-angled-sm {
-    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
-}
+        .clip-angled-sm {
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+        }
 
-.clip-angled-reverse {
-    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
-}
+        .clip-angled-reverse {
+            clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+        }
 
-/* Loading Screen Animations */
-#loading-screen {
-    transition: opacity 0.3s ease-out, visibility 0.3s;
-}
+        #loading-screen {
+            transition: opacity 0.3s ease-out, visibility 0.3s;
+        }
 
-.loader-bar-container {
-    width: 4px;
-    height: 40vh;
-    min-height: 250px;
-    background: rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-}
+        .loader-bar-container {
+            width: 4px;
+            height: 40vh;
+            min-height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
 
-.loader-bar {
-    width: 100%;
-    background: var(--endfield-accent);
-    height: 0%;
-    transition: height 0.05s linear;
-}
+        .loader-bar {
+            width: 100%;
+            background: var(--endfield-accent);
+            height: 0%;
+            transition: height 0.05s linear;
+        }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-    width: 8px;
-}
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--endfield-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--endfield-gray); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--endfield-accent); }
 
-::-webkit-scrollbar-track {
-    background: var(--endfield-dark);
-}
+        .btn-interactive {
+            position: relative;
+            transition: all 0.2s ease;
+        }
 
-::-webkit-scrollbar-thumb {
-    background: var(--endfield-gray);
-}
+        .btn-interactive::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid var(--endfield-accent);
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+            opacity: 0;
+            transition: all 0.2s ease;
+            transform: scale(1.05);
+        }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--endfield-accent);
-    }
+        .btn-interactive:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
 
-/* Interactive Button Glitch/Hover effect */
-.btn-interactive {
-    position: relative;
-    transition: all 0.2s ease;
-}
+        .btn-interactive:hover {
+            background-color: rgba(250, 204, 21, 0.1);
+            color: var(--endfield-accent);
+            text-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+        }
 
-    .btn-interactive::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 1px solid var(--endfield-accent);
-        clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
-        opacity: 0;
-        transition: all 0.2s ease;
-        transform: scale(1.05);
-    }
+        .scanline {
+            width: 100%; height: 100px;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(250,204,21,0.05) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1; position: fixed; bottom: 100%;
+            animation: scanline 8s linear infinite; pointer-events: none; z-index: 50;
+        }
 
-    .btn-interactive:hover::before {
-        opacity: 1;
-        transform: scale(1);
-    }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
 
-    .btn-interactive:hover {
-        background-color: rgba(250, 204, 21, 0.1);
-        color: var(--endfield-accent);
-        text-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
-    }
+        .reveal-element {
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-/* Decorative Scanline */
-.scanline {
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(250,204,21,0.05) 50%, rgba(0,0,0,0) 100%);
-    opacity: 0.1;
-    position: fixed;
-    bottom: 100%;
-    animation: scanline 8s linear infinite;
-    pointer-events: none;
-    z-index: 50;
-}
+        .reveal-up { transform: translateY(40px); }
+        .reveal-left { transform: translateX(-40px); }
+        .reveal-right { transform: translateX(40px); }
 
-@keyframes scanline {
-    0% {
-        bottom: 100%;
-    }
+        .is-visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
 
-    100% {
-        bottom: -100px;
-    }
-}
+        #bg-canvas {
+            position: fixed; inset: 0; z-index: -1;
+            width: 100%; height: 100%;
+            opacity: .28; pointer-events: none;
+        }
 
-/* Continuous Scroll Reveal Animations */
-.reveal-element {
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        .glitch-text {
+            position: relative; display: inline-block;
+        }
 
-.reveal-up {
-    transform: translateY(40px);
-}
+        .name-signal {
+            animation: portfolio-name-signal 5s ease-in-out infinite;
+        }
 
-.reveal-left {
-    transform: translateX(-40px);
-}
+        @keyframes portfolio-name-signal {
+            0%, 72%, 100% { filter: none; transform: translateX(0); }
+            74% { filter: brightness(1.25) drop-shadow(0 0 8px rgba(250, 204, 21, .45)); transform: translateX(1px); }
+            76% { filter: brightness(.85) drop-shadow(0 0 6px rgba(34, 211, 238, .4)); transform: translateX(-1px); }
+            78% { filter: none; transform: translateX(0); }
+        }
 
-.reveal-right {
-    transform: translateX(40px);
-}
+        .glitch-text::before,
+        .glitch-text::after {
+            position: absolute; inset: 0; content: attr(data-text); opacity: 0.8; pointer-events: none;
+        }
 
-.is-visible {
-    opacity: 1;
-    transform: translate(0, 0);
-}
+        .glitch-text::before {
+            animation: portfolio-glitch-a 4s infinite linear alternate-reverse, portfolio-glitch-flicker 4s infinite;
+            left: 2px; color: #fff; text-shadow: -2px 0 #ff00c1;
+        }
+
+        .glitch-text::after {
+            animation: portfolio-glitch-b 4s infinite linear alternate-reverse, portfolio-glitch-flicker 4s infinite .08s;
+            left: -2px; color: #fff; text-shadow: 2px 0 #22d3ee;
+        }
+
+        @keyframes portfolio-glitch-flicker {
+            0%, 76%, 100% { opacity: 0; }
+            78%, 82% { opacity: .72; }
+            80% { opacity: .25; }
+        }
+
+        @keyframes portfolio-glitch-a {
+            0%, 75%, 100% { clip-path: inset(0); transform: none; }
+            80% { clip-path: inset(15% 0 65% 0); transform: translateX(2px); }
+            85% { clip-path: inset(65% 0 12% 0); transform: translateX(-2px); }
+        }
+
+        @keyframes portfolio-glitch-b {
+            0%, 75%, 100% { clip-path: inset(0); transform: none; }
+            82% { clip-path: inset(45% 0 35% 0); transform: translateX(-2px); }
+            88% { clip-path: inset(8% 0 78% 0); transform: translateX(2px); }
+        }
+
+        .typing-cursor::after {
+            content: '_'; margin-left: .1rem; color: var(--endfield-accent);
+            animation: cursor-blink 1s step-start infinite;
+        }
+
+        @keyframes cursor-blink { 50% { opacity: 0; } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .scanline, .glitch-text::before, .glitch-text::after, .typing-cursor::after { animation: none; }
+            .name-signal { animation: none; }
+        }

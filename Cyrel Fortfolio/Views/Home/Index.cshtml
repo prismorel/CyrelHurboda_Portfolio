@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 <!-- Back To Top -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
 <button id="backToTop"
         class="fixed bottom-8 right-8 z-50 hidden opacity-0 transition-all duration-300
                bg-yellow-400 text-black w-14 h-14 clip-angled-sm
@@ -22,8 +23,14 @@
 
 </button>
 <body class="antialiased selection:bg-yellow-400 selection:text-black min-h-screen relative">
-
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <div class="scanline"></div>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 z-50 hidden opacity-0 transition-all duration-300 bg-yellow-400 text-black w-14 h-14 clip-angled-sm border border-yellow-300 shadow-[0_0_20px_rgba(250,204,21,0.35)] hover:scale-110 hover:shadow-[0_0_30px_rgba(250,204,21,0.6)] flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+        </svg>
+    </button>
 
     <div id="loading-screen" class="fixed inset-0 z-50 bg-[#0f1115] flex flex-col justify-center pl-8 md:pl-24 overflow-hidden">
         <div class="absolute right-[-2%] bottom-[-5%] text-[25vh] font-bold text-white/[0.02] font-mono-tech leading-none select-none pointer-events-none z-0">INIT</div>
@@ -62,102 +69,62 @@
                 <span>PRJ_DIR://ROOT/OPERATIVE_DATA</span>
             </div>
             <div class="hidden sm:flex gap-4">
-                <span>V. 1.0.4</span>
+                <button id="version-trigger" type="button" class="transition-colors hover:text-cyan-400" title="[ ? ]">V. 1.0.5</button>
                 <span>[ ONLINE ]</span>
             </div>
         </div>
 
         <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-32">
-            <!-- Profile Image Container with Tech Frame -->
-            <div id="profile-img-container" class="lg:col-span-5 relative group cursor-pointer touch-manipulation">
+            <div id="profile-img-container" class="lg:col-span-5 relative group cursor-pointer touch-manipulation reveal-element reveal-right">
                 <div class="absolute -inset-4 border border-gray-800 clip-angled z-0 group-hover:border-yellow-400/30 transition-colors duration-500"></div>
                 <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-yellow-400 z-20"></div>
                 <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-yellow-400 z-20"></div>
 
                 <div class="relative z-10 w-full aspect-square bg-gray-900 clip-angled overflow-hidden border border-gray-700">
                     <img src="https://media.licdn.com/dms/image/v2/D5603AQFPaf4T9rq-lg/profile-displayphoto-scale_400_400/B56Z6wq.pBGgAg-/0/1781080519146?e=1787184000&v=beta&t=drIGty4c7KEft-PGpkvyJjtop8p2UdQOfyUnzmxoKvk" alt="Profile Picture" class="w-full h-full object-cover transition-all duration-700 opacity-90 hover:opacity-100 scale-105 hover:scale-100">
-                    <div class="absolute bottom-4 left-4 font-mono-tech text-[10px] text-yellow-400/70 bg-black/50 px-2 py-1 clip-angled-sm backdrop-blur-sm">
+                    <div id="profile-id-tag" class="absolute bottom-4 left-4 font-mono-tech text-[10px] text-yellow-400/70 bg-black/50 px-2 py-1 clip-angled-sm backdrop-blur-sm cursor-pointer transition-colors hover:bg-cyan-400 hover:text-black" title="[ ? ]">
                         ID: OP-7729-X
                     </div>
                 </div>
             </div>
 
-            <!-- Profile Details -->
             <div class="lg:col-span-7 flex flex-col justify-center">
-                <div class="mb-2 flex items-center gap-3">
+                <div class="mb-2 flex items-center gap-3 reveal-element reveal-left">
                     <span class="text-yellow-400 font-mono-tech text-sm font-bold tracking-widest">>> PROFILE_ACCESS_GRANTED</span>
                     <div class="h-[1px] flex-grow bg-gradient-to-r from-yellow-400/50 to-transparent"></div>
                 </div>
 
-                <h1 id="secret-name" class="text-5xl md:text-7xl font-bold text-white uppercase tracking-tight mb-2 leading-none cursor-crosshair select-none touch-manipulation">
-                    Cyrel I. <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 pointer-events-none">Hurboda</span>
-                </h1>
-
-                <h2 class="text-xl md:text-2xl text-gray-400 font-medium mb-6 flex items-center gap-2">
-                    <span class="w-4 h-[2px] bg-yellow-400 inline-block"></span>
-                    System Support Specialist
-                </h2>
-
-                <div class="flex gap-4 mb-8 font-mono-tech">
-                    <!-- Resume -->
-                    <a href="https://drive.google.com/uc?export=download&id=1K4rpZFbGiBjENl2royTxs2Gf_aQU-eqc" class="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-bold uppercase clip-angled-sm hover:bg-yellow-300 transition-colors" download>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"fill="none"viewBox="0 0 24 24"stroke="currentColor" stroke-width="2"> <path stroke-linecap="round"stroke-linejoin="round" d="M12 3v12m0 0l4-4m-4 4l-4-4M5 21h14"/> </svg>
-                        Resume
-                    </a>
-                    
-                    <!-- Email -->
-                    <a href="mailto:cyrelhurboda@gmail.com"
-                    title="Email"
-                    class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                            <path d="M0 3v18h24V3H0zm6.623 7.929L2 16.641V7.183l4.623 3.746zM2.482 5h19.035L12 12.713 2.482 5zm5.694 7.188L12 15.287l3.83-3.104 5.612 6.817H2.663l5.513-6.812zm9.208-1.264L22 7.183v9.348l-4.616-5.607z"/>
-                        </svg>
-                    </a>
-
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/cyrel-hurboda-2728b9240/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="LinkedIn"
-                    class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
-
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                            <path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 19H5V8h3v11zM6.5 6.732A1.75 1.75 0 1 1 6.5 3.2a1.75 1.75 0 0 1 0 3.532zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/>
-                        </svg>
-
-                    </a>
-
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/CyrelHurboda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Facebook"
-                    class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
-
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                            <path d="M22.675 0h-21.35C.595 0 0 .595 0 1.326v21.348C0 23.405.595 24 1.326 24h11.495v-9.294H9.692V11.08h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.763v2.309h3.587l-.467 3.626h-3.12V24h6.116C23.405 24 24 23.405 24 22.674V1.326C24 .595 23.405 0 22.675 0z"/>
-                        </svg>
-
-                    </a>
-
-                    <!-- X (Twitter) -->
-                    <a href="https://x.com/prismorel"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="X"
-                    class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
-
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                            <path d="M18.901 1.153H22.58l-8.03 9.178L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.474l8.59-9.816L0 1.154h7.594l5.243 6.932L18.901 1.153zm-1.29 19.493h2.039L6.486 3.24H4.298L17.611 20.646z"/>
-                        </svg>
-
-                    </a>
-                    
-
-
+                <div class="reveal-element reveal-left">
+                    <h1 id="secret-name" class="glitch-text name-signal text-5xl md:text-7xl font-bold text-white uppercase tracking-tight mb-2 leading-none select-none touch-manipulation cursor-pointer" >Cyrel Hurboda</h1>
                 </div>
 
-                <div class="relative pl-6 border-l border-gray-700 mb-8">
+                <div class="reveal-element reveal-left" style="transition-delay: 0.1s;">
+                    <h2 class="text-xl md:text-2xl text-gray-400 font-medium mb-6 flex items-center gap-2">
+                        <span class="w-4 h-[2px] bg-yellow-400 inline-block"></span>
+                        <span id="typing-role" class="typing-cursor">System Support Specialist</span>
+                    </h2>
+                </div>
+
+                <div class="flex gap-4 mb-8 font-mono-tech reveal-element reveal-left" style="transition-delay: 0.2s;">
+                    <a href="https://drive.google.com/uc?export=download&id=1K4rpZFbGiBjENl2royTxs2Gf_aQU-eqc" class="inline-flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-bold uppercase clip-angled-sm hover:bg-yellow-300 transition-colors" download>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l4-4m-4 4l-4-4M5 21h14"/> </svg>
+                        Resume
+                    </a>
+                    <a href="mailto:cyrelhurboda@gmail.com" title="Email" class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M0 3v18h24V3H0zm6.623 7.929L2 16.641V7.183l4.623 3.746zM2.482 5h19.035L12 12.713 2.482 5zm5.694 7.188L12 15.287l3.83-3.104 5.612 6.817H2.663l5.513-6.812zm9.208-1.264L22 7.183v9.348l-4.616-5.607z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cyrel-hurboda-2728b9240/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 19H5V8h3v11zM6.5 6.732A1.75 1.75 0 1 1 6.5 3.2a1.75 1.75 0 0 1 0 3.532zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/CyrelHurboda" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .595 0 1.326v21.348C0 23.405.595 24 1.326 24h11.495v-9.294H9.692V11.08h3.129V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.763v2.309h3.587l-.467 3.626h-3.12V24h6.116C23.405 24 24 23.405 24 22.674V1.326C24 .595 23.405 0 22.675 0z"/></svg>
+                    </a>
+                    <a href="https://x.com/prismorel" target="_blank" rel="noopener noreferrer" title="X" class="w-10 h-10 border border-gray-600 bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-yellow-400 hover:border-yellow-400 clip-angled-sm transition-colors">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.901 1.153H22.58l-8.03 9.178L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.474l8.59-9.816L0 1.154h7.594l5.243 6.932L18.901 1.153zm-1.29 19.493h2.039L6.486 3.24H4.298L17.611 20.646z"/></svg>
+                    </a>
+                </div>
+
+                <div class="relative pl-6 border-l border-gray-700 mb-8 reveal-element reveal-left" style="transition-delay: 0.3s;">
                     <div class="absolute top-0 -left-[5px] w-2 h-2 bg-gray-500 rotate-45"></div>
                     <div class="absolute bottom-0 -left-[5px] w-2 h-2 bg-gray-500 rotate-45"></div>
                     <p class="text-gray-300 leading-relaxed max-w-2xl text-lg">
@@ -165,8 +132,7 @@
                     </p>
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="flex flex-wrap gap-4 font-mono-tech">
+                <div class="flex flex-wrap gap-4 font-mono-tech reveal-element reveal-up" style="transition-delay: 0.4s;">
                     <a href="#job-experiences" class="btn-interactive clip-angled-sm bg-gray-800/80 border border-gray-600 px-4 py-2.5 text-[10px] sm:text-xs font-bold tracking-widest uppercase flex items-center gap-2 text-white hover:text-yellow-400">
                         <span>Job_Experiences</span>
                     </a>
@@ -183,20 +149,17 @@
             </div>
         </section>
 
-        <!-- JOB EXPERIENCES SECTION -->
         <section id="job-experiences" class="mb-32">
             <div class="flex items-end justify-between mb-8 border-b border-gray-800 pb-4 reveal-element reveal-up">
-                <div>
+                <div id="classified-trigger" class="cursor-pointer group" title="[ CLASSIFIED ] Click to decrypt...">
                     <h3 class="text-3xl font-bold uppercase tracking-wide flex items-center gap-3">
                         <span class="w-3 h-3 bg-yellow-400 inline-block clip-angled-sm"></span>
                         Job Experiences
                     </h3>
-                    @* <p class="font-mono-tech text-xs text-gray-500 mt-1 pl-6">OPERATIVE_DEPLOYMENT_HISTORY // CLASSIFIED</p> *@
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Deployment 03 -->
                 <div class="border border-gray-800 bg-[#13151a] p-6 clip-angled-sm hover:border-yellow-400/50 transition-colors group relative cursor-default reveal-element reveal-up flex flex-col h-full" style="transition-delay: 0.1s;">
                     <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-gray-600 group-hover:border-yellow-400 transition-colors m-2"></div>
                     <div class="font-mono-tech text-yellow-400 text-xs mb-4 flex items-center gap-2">
@@ -210,8 +173,6 @@
                         Providing software and hardware support to the secretarial, Docket, and Paralegal team ensuring smooth operations. Developing custom module requirements and maintaining existing modules that automate firm workflows powered by Bubble.io.
                     </div>
                 </div>
-
-                <!-- Deployment 02 -->
                 <div class="border border-gray-800 bg-[#13151a] p-6 clip-angled-sm hover:border-yellow-400/50 transition-colors group relative cursor-default reveal-element reveal-up flex flex-col h-full" style="transition-delay: 0.2s;">
                     <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-gray-600 group-hover:border-yellow-400 transition-colors m-2"></div>
                     <div class="font-mono-tech text-gray-500 text-xs mb-4 group-hover:text-yellow-400/70 transition-colors">DEPLOYMENT_02</div>
@@ -222,8 +183,6 @@
                         Maintaining and creating maintenance on developed software and creating software solutions by studying information needs conferring with users; studying systems flow, data usage, and work processes, investigating problem areas following the SDLC.
                     </div>
                 </div>
-
-                <!-- Deployment 01 -->
                 <div class="border border-gray-800 bg-[#13151a] p-6 clip-angled-sm hover:border-yellow-400/50 transition-colors group relative cursor-default reveal-element reveal-up flex flex-col h-full" style="transition-delay: 0.3s;">
                     <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-gray-600 group-hover:border-yellow-400 transition-colors m-2"></div>
                     <div class="font-mono-tech text-gray-500 text-xs mb-4 group-hover:text-yellow-400/70 transition-colors">DEPLOYMENT_01</div>
@@ -237,7 +196,6 @@
             </div>
         </section>
 
-        <!-- SKILLS SECTION -->
         <section id="skills" class="mb-32">
             <div class="flex items-end justify-between mb-8 border-b border-gray-800 pb-4 reveal-element reveal-up">
                 <div>
@@ -245,45 +203,42 @@
                         <span class="w-3 h-3 bg-yellow-400 inline-block clip-angled-sm"></span>
                         Technical Skills
                     </h3>
-                    @* <p class="font-mono-tech text-xs text-gray-500 mt-1 pl-6">SYSTEM_CAPABILITIES // REGISTERED</p> *@
                 </div>
             </div>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default">
                     Hardware/Software Troubleshooting
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     JavaScript
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     jQuery
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     SQL
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     Low Code / No Code (Bubble.io)
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     SAP ERP
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     SDLC
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     Microsoft Excel
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     Microsoft Office
                 </div>
-                <div class="border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
+                <div class="reveal-element reveal-up border border-gray-700 bg-gray-900/50 p-4 text-center clip-angled-sm text-sm font-mono-tech text-gray-300 hover:text-yellow-400 hover:border-yellow-400 hover:bg-gray-800 transition-all cursor-default flex items-center justify-center">
                     Microsoft PowerPoint
                 </div>
             </div>
         </section>
 
-        <!-- EDUCATION SECTION -->
         <section id="education" class="mb-32">
             <div class="flex items-end justify-between mb-8 border-b border-gray-800 pb-4 reveal-element reveal-up">
                 <div>
@@ -291,18 +246,15 @@
                         <span class="w-3 h-3 bg-yellow-400 inline-block clip-angled-sm"></span>
                         Education
                     </h3>
-                    @* <p class="font-mono-tech text-xs text-gray-500 mt-1 pl-6">ACADEMIC_RECORDS // VERIFIED</p> *@
                 </div>
             </div>
             
             <div class="max-w-4xl mx-auto space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-700 before:to-transparent">
-                
-                <!-- Tertiary -->
-                <div  class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                    <div  class="flex items-center justify-center w-10 h-10 rounded-full border border-yellow-400 bg-gray-900 group-hover:bg-yellow-400 text-yellow-400 group-hover:text-black shadow-[0_0_10px_rgba(250,204,21,0.2)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors z-10">
+                <div class="reveal-element reveal-up relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-yellow-400 bg-gray-900 group-hover:bg-yellow-400 text-yellow-400 group-hover:text-black shadow-[0_0_10px_rgba(250,204,21,0.2)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors z-10">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72l5 2.73 5-2.73v3.72z"/></svg>
                     </div>
-                    <div  class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 border border-gray-800 bg-[#13151a] clip-angled-sm group-hover:border-yellow-400/50 transition-colors">
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 border border-gray-800 bg-[#13151a] clip-angled-sm group-hover:border-yellow-400/50 transition-colors">
                         <div class="flex items-center justify-between mb-1">
                             <h4 class="font-bold text-lg uppercase"><a href="https://arellano.edu.ph/contact/andres-bonifacio-campus-au-pasig/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-yellow-400 transition-colors"> Arellano University </a> </h4><span class="font-mono-tech text-xs text-yellow-400">01/2014 - 12/2019</span>
                         </div>
@@ -310,8 +262,7 @@
                     </div>
                 </div>
 
-                <!-- Secondary -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="reveal-element reveal-up relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" style="transition-delay: 0.1s;">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-600 bg-gray-900 group-hover:border-yellow-400 group-hover:text-yellow-400 text-gray-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors z-10">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72l5 2.73 5-2.73v3.72z"/></svg>
                     </div>
@@ -324,8 +275,7 @@
                     </div>
                 </div>
 
-                <!-- Primary -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div class="reveal-element reveal-up relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" style="transition-delay: 0.2s;">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-600 bg-gray-900 group-hover:border-yellow-400 group-hover:text-yellow-400 text-gray-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 transition-colors z-10">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72l5 2.73 5-2.73v3.72z"/></svg>
                     </div>
@@ -337,11 +287,9 @@
                         <p class="text-sm text-gray-500 font-mono-tech">Primary Education</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- CERTIFICATES SECTION -->
         <section id="certificates" class="mb-32">
             <div class="flex items-end justify-between mb-8 border-b border-gray-800 pb-4 reveal-element reveal-up">
                 <div>
@@ -349,26 +297,19 @@
                         <span class="w-3 h-3 bg-yellow-400 inline-block clip-angled-sm"></span>
                         Certificates
                     </h3>
-                    @* <p class="font-mono-tech text-xs text-gray-500 mt-1 pl-6">AUTHORIZED_CREDENTIALS // VERIFIED</p> *@
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal-element reveal-up"> 
-                <!-- Existing Certificate Images Keep their modal functions intact -->
-                <!-- Image 1 -->
                 <div class="relative group cursor-pointer aspect-[4/3] bg-gray-900 clip-angled-sm border border-gray-700 overflow-hidden" onclick="openImageModal('/imgs/infotech.png')"> 
-                    <img src="/imgs/infotech.png" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"> 
+                    <img src="imgs/infotech.png" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/400x300/1a1c23/facc15?text=Cert+1'"> 
                     <div class="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/50 transition-colors z-10 pointer-events-none"></div> 
                 </div> 
-
-                <!-- Image 2 -->
                 <div class="relative group cursor-pointer aspect-[4/3] bg-gray-900 clip-angled-sm border border-gray-700 overflow-hidden" onclick="openImageModal('/imgs/Google Workspace.png')"> 
-                    <img src="/imgs/Google Workspace.png" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"> 
+                    <img src="imgs/Google Workspace.png" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/400x300/1a1c23/facc15?text=Cert+2'"> 
                     <div class="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/50 transition-colors z-10 pointer-events-none"></div> 
                 </div> 
-
-                <!-- Image 3 -->
                 <div class="relative group cursor-pointer aspect-[4/3] bg-gray-900 clip-angled-sm border border-gray-700 overflow-hidden" onclick="openImageModal('/imgs/UIUX.png')"> 
-                    <img src="/imgs/UIUX.png" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"> 
+                    <img src="imgs/UIUX.png" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" onerror="this.src='https://placehold.co/400x300/1a1c23/facc15?text=Cert+3'"> 
                    <div class="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/50 transition-colors z-10 pointer-events-none"></div> 
                 </div> 
             </div>    
@@ -389,10 +330,9 @@
             </div>
 
             <div class="flex flex-col gap-24">
-                <!-- Project Block 1 (Image Left) -->
                 <div class="flex flex-col lg:flex-row gap-8 items-center group reveal-element reveal-left">
                     <div class="w-full lg:w-3/5 h-[400px] relative clip-angled bg-gray-900 border border-gray-700 overflow-hidden">
-                        <img src="imgs/DLdash.png" alt="Project 1" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105">
+                        <img src="imgs/DLDash.png" alt="Project 1" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/1200x800/1a1c23/4b5563?text=DLDash'">
                         <div class="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/30 z-10 transition-colors pointer-events-none"></div>
                     </div>
                     <div class="w-full lg:w-2/5 p-4">
@@ -403,10 +343,9 @@
                     </div>
                 </div>
 
-                <!-- Project Block 2 (Image Right) -->
                 <div class="flex flex-col lg:flex-row-reverse gap-8 items-center group reveal-element reveal-right">
                     <div class="w-full lg:w-3/5 h-[400px] relative clip-angled bg-gray-900 border border-gray-700 overflow-hidden">
-                        <img src="/imgs/Portfolio.png" alt="Project 2" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105">
+                        <img src="imgs/Portfolio.png" alt="Project 2" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/1200x800/1a1c23/4b5563?text=Portfolio'">
                         <div class="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/30 z-10 transition-colors pointer-events-none"></div>
                     </div>
                     <div class="w-full lg:w-2/5 p-4 lg:text-right">
@@ -417,10 +356,9 @@
                     </div>
                 </div>
 
-                <!-- Project Block 3 (Image Left) -->
                 <div class="flex flex-col lg:flex-row gap-8 items-center group reveal-element reveal-left">
                     <div class="w-full lg:w-3/5 h-[400px] relative clip-angled bg-gray-900 border border-gray-700 overflow-hidden">
-                        <img src="https://placehold.co/1200x800/1a1c23/4b5563?text=DATA_VISUAL" alt="Project 3" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105">
+                        <img src="https://placehold.co/1200x800/1a1c23/4b5563?text=DATA_VISUAL" alt="Project 3" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/1200x800/1a1c23/4b5563?text=In+Development'">
                         <div class="absolute inset-0 border-2 border-transparent group-hover:border-yellow-400/30 z-10 transition-colors pointer-events-none"></div>
                     </div>
                     <div class="w-full lg:w-2/5 p-4">
@@ -450,7 +388,7 @@
             [ ESC ] <span class="hidden sm:inline">Close</span>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <div class="max-w-5xl max-h-[85vh] relative w-full h-full flex items-center justify-center border border-gray-800 clip-angled bg-[#0a0a0a] p-2">
+        <div id="image-modal-content" class="max-w-5xl max-h-[85vh] relative w-full h-full flex items-center justify-center border border-gray-800 clip-angled bg-[#0a0a0a] p-2">
             <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-yellow-400 z-20"></div>
             <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-yellow-400 z-20"></div>
             <img id="modal-image" src="" alt="Preview" class="max-w-full max-h-full object-contain">
@@ -470,7 +408,6 @@
             <h2 class="text-2xl font-bold uppercase tracking-widest">System Override</h2>
             <p class="text-xs text-gray-400 mb-2">Tactical Block Arrangement Protocol</p>
             
-            <!-- NEW: Upgraded Score, Combo, and Hold Display Panel -->
             <div class="flex justify-center items-center gap-4 text-xs text-gray-400 border border-gray-700 bg-[#0a0a0a] py-2 px-4 clip-angled-sm mt-2 inline-block mx-auto">
                 <span>Score: <span id="tetris-score" class="text-white text-sm font-bold">0</span></span>
                 <span class="text-gray-700">|</span>
@@ -492,14 +429,10 @@
             </div>
         </div>
 
-        <!-- Upgraded Mobile Controls (Now with HOLD button) -->
         <div class="mt-4 flex flex-col gap-2 z-20 font-mono-tech sm:hidden w-full max-w-[360px] px-2 touch-none">
             <div class="grid grid-cols-3 gap-2">
                 <button id="btn-rotate" class="btn-interactive bg-gray-800 border border-gray-600 h-12 flex items-center justify-center text-yellow-400 clip-angled-sm select-none active:bg-gray-700 text-xs font-bold tracking-widest">ROTATE</button>
-                
-                <!-- NEW: Mobile Hold Button -->
                 <button id="btn-hold" class="btn-interactive bg-blue-900/30 border border-blue-500/50 h-12 flex items-center justify-center text-blue-400 clip-angled-sm select-none active:bg-blue-800/50 text-xs font-bold tracking-widest">HOLD (C)</button>
-                
                 <button id="btn-harddrop" class="btn-interactive bg-red-900/30 border border-red-500/50 h-12 flex items-center justify-center text-red-400 clip-angled-sm select-none active:bg-red-800/50 text-xs font-bold tracking-widest">DROP</button>
             </div>
             <div class="grid grid-cols-3 gap-2">
@@ -514,7 +447,6 @@
         </div>
     </div>
 
-    <!-- Security Prompt Modal (Easter Egg) -->
     <div id="auth-modal" class="fixed inset-0 z-[110] bg-black/95 hidden flex-col items-center justify-center p-4 backdrop-blur-md opacity-0 transition-opacity duration-300">
         <div class="bg-[#13151a] border border-red-500 p-8 clip-angled shadow-[0_0_30px_rgba(239,68,68,0.1)] max-w-md w-full relative">
             <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-red-500 z-30 -m-1"></div>
@@ -537,7 +469,6 @@
         </div>
     </div>
 
-    <!-- Romantic Screen (Easter Egg) -->
     <div id="romantic-screen" class="fixed inset-0 z-[9999] hidden flex-col items-center justify-center overflow-hidden opacity-0 transition-opacity duration-1000" style="background: radial-gradient(circle at center, #2a0815 0%, #0a0005 100%);">
         <div id="heart-container" class="absolute inset-0 pointer-events-none"></div>
         <div class="relative z-10 text-center px-6 max-w-3xl">
@@ -560,9 +491,23 @@
                 Every line of code I write, every system I build, it all leads back to you.<br><br>
                 You are my greatest love, my most beautiful deployment, and my forever. I love you so much! ❤️
             </p>
-            <button id="return-to-system-btn" class="px-8 py-3 bg-pink-500/20 border border-pink-400 text-pink-300 hover:bg-pink-500 hover:text-white transition-all rounded-full font-mono-tech tracking-widest text-sm uppercase shadow-[0_0_15px_rgba(244,114,182,0.3)] hover:shadow-[0_0_25px_rgba(244,114,182,0.6)] touch-manipulation">
+            <button id="closeRomanticMode" class="px-8 py-3 bg-pink-500/20 border border-pink-400 text-pink-300 hover:bg-pink-500 hover:text-white transition-all rounded-full font-mono-tech tracking-widest text-sm uppercase shadow-[0_0_15px_rgba(244,114,182,0.3)] hover:shadow-[0_0_25px_rgba(244,114,182,0.6)] touch-manipulation">
                 [ RETURN_TO_SYSTEM ]
             </button>
+        </div>
+    </div>
+
+    <div id="egg-toast" class="fixed top-8 left-1/2 z-[300] flex -translate-x-1/2 -translate-y-32 flex-col items-center gap-2 border border-cyan-400 bg-gray-900/95 px-6 py-4 font-mono-tech shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-transform duration-500 pointer-events-none">
+        <div class="flex items-center gap-2 text-sm font-bold tracking-widest text-cyan-400"><span class="h-2 w-2 animate-pulse bg-cyan-400"></span>EASTER EGG DISCOVERED</div>
+        <div id="egg-toast-text" class="text-xs text-white"></div>
+    </div>
+
+    <div id="hack-modal" class="fixed inset-0 z-[200] hidden flex-col overflow-hidden bg-black p-8 font-mono-tech opacity-0 transition-opacity duration-300">
+        <div class="scanline" style="opacity: .3; animation-duration: 4s;"></div>
+        <div class="relative z-10 mx-auto flex h-full w-full max-w-4xl flex-col">
+            <div class="mb-4 flex items-center justify-between border-b border-green-500/30 pb-2 text-sm text-green-500"><span>TERMINAL_OVERRIDE_v2.0</span><span id="hack-timer" class="animate-pulse">SYS.TIME: 00:00:00</span></div>
+            <div id="hack-console" class="flex flex-grow flex-col justify-end overflow-hidden whitespace-pre-wrap pb-10 text-sm leading-relaxed text-green-500 md:text-base"></div>
+            <button id="close-hack-btn" type="button" class="btn-interactive clip-angled-sm absolute bottom-8 right-8 hidden border border-red-500 bg-red-900/30 px-6 py-2.5 text-xs font-bold tracking-widest text-red-500 transition-all hover:bg-red-500 hover:text-white">DISCONNECT_TERMINAL</button>
         </div>
     </div>
 </body>
