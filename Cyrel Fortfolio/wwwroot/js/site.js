@@ -125,7 +125,7 @@ $(document).ready(function () {
 
     // Open Site DLDash Website
     $('#button-DLDashAccessWebsite').on('click', function () {
-        window.open('https://dldash.divinalaw.com', '_blank');
+        window.open('https://dldash.divinalaw.com/version-test/login', '_blank');
     });
     // ==========================================
     // C. ROMANTIC EASTER EGG EVENTS

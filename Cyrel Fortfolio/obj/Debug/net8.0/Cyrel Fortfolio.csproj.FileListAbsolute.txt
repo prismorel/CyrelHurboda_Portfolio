@@ -367,3 +367,4 @@ C:\Users\SYSDEV - Cy\Desktop\Cyrel\0.) Personal\Fortfolio\Cy\Cyrel Fortfolio\Cyr
 C:\Users\SYSDEV - Cy\Desktop\Cyrel\0.) Personal\Fortfolio\Cy\Cyrel Fortfolio\Cyrel Fortfolio\bin\Debug\net8.0\refs\System.Xml.XPath.dll
 C:\Users\SYSDEV - Cy\Desktop\Cyrel\0.) Personal\Fortfolio\Cy\Cyrel Fortfolio\Cyrel Fortfolio\bin\Debug\net8.0\refs\System.Xml.XPath.XDocument.dll
 C:\Users\SYSDEV - Cy\Desktop\Cyrel\0.) Personal\Fortfolio\Cy\Cyrel Fortfolio\Cyrel Fortfolio\bin\Debug\net8.0\refs\WindowsBase.dll
+C:\Users\SYSDEV - Cy\Desktop\Cyrel\0.) Personal\Fortfolio\Cy\Cyrel Fortfolio\Cyrel Fortfolio\obj\Debug\net8.0\Cyrel Fortfolio.sourcelink.json
