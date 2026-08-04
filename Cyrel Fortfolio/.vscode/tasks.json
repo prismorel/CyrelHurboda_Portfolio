@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build portfolio",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/Cyrel Fortfolio.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

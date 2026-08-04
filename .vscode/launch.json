@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Cyrel Fortfolio",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build portfolio",
+      "program": "${workspaceFolder}/Cyrel Fortfolio/bin/Debug/net8.0/Cyrel Fortfolio.dll",
+      "cwd": "${workspaceFolder}/Cyrel Fortfolio",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5117"
+      },
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "console": "integratedTerminal"
+    }
+  ]
+}

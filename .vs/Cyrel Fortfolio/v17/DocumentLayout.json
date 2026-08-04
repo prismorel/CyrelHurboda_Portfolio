@@ -1,0 +1,97 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|c:\\users\\sysdev - cy\\desktop\\cyrel\\0.) personal\\fortfolio\\cy\\cyrel fortfolio\\cyrel fortfolio\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|solutionrelative:cyrel fortfolio\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|c:\\users\\sysdev - cy\\desktop\\cyrel\\0.) personal\\fortfolio\\cy\\cyrel fortfolio\\cyrel fortfolio\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|solutionrelative:cyrel fortfolio\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|c:\\users\\sysdev - cy\\desktop\\cyrel\\0.) personal\\fortfolio\\cy\\cyrel fortfolio\\cyrel fortfolio\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|solutionrelative:cyrel fortfolio\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|c:\\users\\sysdev - cy\\desktop\\cyrel\\0.) personal\\fortfolio\\cy\\cyrel fortfolio\\cyrel fortfolio\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7485EEDD-A0EF-4385-947F-C1AF48EEF13F}|Cyrel Fortfolio\\Cyrel Fortfolio.csproj|solutionrelative:cyrel fortfolio\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Cyrel Fortfolio\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Cyrel Fortfolio\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAUwGMBAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-07-30T08:20:40.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Cyrel Fortfolio\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Cyrel Fortfolio\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-30T08:20:05.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Cyrel Fortfolio\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Cyrel Fortfolio\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAIwG0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-30T08:12:07.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Cyrel Fortfolio\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\SYSDEV - Cy\\Desktop\\Cyrel\\0.) Personal\\Fortfolio\\Cy\\Cyrel Fortfolio\\Cyrel Fortfolio\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Cyrel Fortfolio\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAuwFMBAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-30T08:11:21.354Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
